@@ -1,10 +1,22 @@
 #include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+void SinVidaSocialProteco(int tablero[10][10],int filas,int columnas,int celulas);
+void ponerEn0s(int tablero[10][10],int filas, int columnas);
+void imprimirMatriz(int tablero[10][10],int filas, int columnas);
+int Vecinirijillos(int tablero[10][10], int filas, int columnas);
 void ponerEn0s(int tablero[10][10],int filas, int columnas) {
 	int	i, j;
 	for (i=0; i<columnas; i++){
 		for (j=0; j<filas; j++){
 			tablero[i][j] = 0;
 		}
+	}
+}
+void regarBendiciones(int tablero[10][10],int filas, int columnas,int celulas) {
+	int	i;
+	for (i=0; i<celulas;i++){
+		tablero[rand() % 10][rand() % 10] = 1;
 	}
 }
 int main(){
@@ -19,29 +31,33 @@ int main(){
 	scanf("%d",&celulas);
 	int tablero[filas][columnas];
 	ponerEn0s(tablero,filas,columnas);
-	SinVidaSocialProteco(tablero[filas][columnas],filas,columnas,celulas);
+	regarBendiciones(tablero,filas,columnas,celulas);
+	imprimirMatriz(tablero,filas,columnas);
+	printf("\n\n");
+	int i;
+	for(int i=0;i<10;i++){
+		//usleep(100000);
+		SinVidaSocialProteco(tablero,filas,columnas,celulas);
+		imprimirMatriz(tablero,filas,columnas);
+		printf("\n");
+		printf("\n");
 }
-int anadirY(int i, int ontoy,int filas) {
-	i += ontoy;
-	while (i < 0) 
-		i += filas;
-	while (i >= filas) 
-		i -= filas;
-	return i;
 }
-int anadirX(int i, int ontoy,int columnas) {
-	i += ontoy;
-	while (i < 0) 
-		i += columnas;
-	while (i >= columnas) 
-		i -= columnas;
+int Vecinirijillos(int tablero[10][10], int filas, int columnas) {
+	int	k, l, i;
+	i = 0;
+	for (k=-1; k<=1; k++) 
+		for (l=-1; l<=1; l++)
+		if (k || l)
+			if (tablero[filas+k][columnas+l]==1) 
+				i++;
 	return i;
 }
 void SinVidaSocialProteco(int tablero[10][10],int filas,int columnas,int celulas){
 	int	i, j, a, nuevaTabla[columnas][filas];
 	for (i=0; i<columnas; i++) 
 		for (j=0; j<filas; j++) {
-			//a = adjacent_to (tablero, i, j);
+			a = Vecinirijillos(tablero,i,j);
 			if (a == 2) 
 				nuevaTabla[i][j] = tablero[i][j];
 			if (a == 3) 
@@ -61,12 +77,8 @@ void imprimirMatriz(int tablero[10][10],int filas, int columnas){
 	int i,j;
 	for(i=0;i<columnas;i++){
 		for(j=0;j<filas;j++){
-			if(tablero[i][j]==1){
-				printf("   O");
-			}else{
-				printf("   X");
-			}
-		}
-		printf("\n");
+			printf("   %d",tablero[i][j]);
 	}
+	printf("\n");
+}
 }
