@@ -1,4 +1,6 @@
 #include <stdio.h>
+
+//Hola git :D
 void ponerEn0s(int tablero[10][10],int filas, int columnas) {
 	int	i, j;
 	for (i=0; i<columnas; i++){
