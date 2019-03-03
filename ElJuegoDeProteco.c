@@ -33,14 +33,14 @@ int main(){
 	ponerEn0s(tablero,filas,columnas);
 	regarBendiciones(tablero,filas,columnas,celulas);
 	imprimirMatriz(tablero,filas,columnas);
-	printf("\n\n");
+	usleep(500000);
+	system("clear");
 	int i;
-	for(int i=0;i<10;i++){
-		//usleep(100000);
+	for(int i=0;i<100;i++){
 		SinVidaSocialProteco(tablero,filas,columnas,celulas);
 		imprimirMatriz(tablero,filas,columnas);
-		printf("\n");
-		printf("\n");
+		usleep(500000);
+		system("clear");
 }
 }
 int Vecinirijillos(int tablero[10][10], int filas, int columnas) {
