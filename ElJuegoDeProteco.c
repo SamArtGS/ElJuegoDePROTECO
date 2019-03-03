@@ -1,15 +1,10 @@
 #include <stdio.h>
-<<<<<<< HEAD
 #include <unistd.h>
 #include <stdlib.h>
 void SinVidaSocialProteco(int tablero[10][10],int filas,int columnas,int celulas);
 void ponerEn0s(int tablero[10][10],int filas, int columnas);
 void imprimirMatriz(int tablero[10][10],int filas, int columnas);
 int Vecinirijillos(int tablero[10][10], int filas, int columnas);
-=======
-
-//Hola git :D
->>>>>>> ce78d3e280fad269b13b3259f9eb5fb91b80d45c
 void ponerEn0s(int tablero[10][10],int filas, int columnas) {
 	int	i, j;
 	for (i=0; i<columnas; i++){
@@ -84,10 +79,6 @@ void imprimirMatriz(int tablero[10][10],int filas, int columnas){
 		for(j=0;j<filas;j++){
 			printf("   %d",tablero[i][j]);
 	}
-<<<<<<< HEAD
 	printf("\n");
 }
 }
-=======
-}
->>>>>>> ce78d3e280fad269b13b3259f9eb5fb91b80d45c
