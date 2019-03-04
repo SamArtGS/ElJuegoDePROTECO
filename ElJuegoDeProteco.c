@@ -80,7 +80,6 @@ void SinVidaSocialProteco(int ** tablero,int filas,int columnas,int celulas){
     for (i=0; i<columnas; i++){
         for (j=0; j<filas; j++) {
             a = Vecinirijillos(tablero,i,j,filas,columnas);
-            
             if (a == 2)
                 nuevaTabla[i][j] = tablero[i][j];
             if (a == 3)
