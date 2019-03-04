@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
 
 void SinVidaSocialProteco(int ** tablero,int filas,int columnas,int celulas);
 void ponerEn0s(int ** tablero,int filas, int columnas);
