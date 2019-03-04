@@ -99,9 +99,9 @@ void imprimirMatriz(int ** tablero,int filas, int columnas){
     for(i=0;i<columnas;i++){
         for(j=0;j<filas;j++){
             if(tablero[i][j]==0){
-                printf("   ☠️");
+                printf("   .");
             }else{
-                printf("   ☘️");
+                printf("   @");
             }
         }
         printf("\n");
