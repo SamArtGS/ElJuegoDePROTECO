@@ -52,13 +52,13 @@ int main(){
     free(tablero);
 }
 int Vecinirijillos(int ** tablero, int filas, int columnas,int filReal,int colReal){
-    int k, l, i;
+    int horiz, vert, i;
     i = 0;
-    for (k=-1; k<=1; k++){
-        for (l=-1; l<=1; l++){
-            if (k || l){
-                if(filas+k >-1 && (filas+k) < (filReal) && (columnas+l) >-1 && (columnas+l) < (colReal)){
-                    if (tablero[filas+k][columnas+l]==1){
+    for (horiz=-1; horiz<=1; horiz++){
+        for (vert=-1; vert<=1; vert++){
+            if (horiz || vert){
+                if(filas+horiz >-1 && (filas+horiz) < (filReal) && (columnas+vert) >-1 && (columnas+vert) < (colReal)){
+                    if (tablero[filas+horiz][columnas+vert]==1){
                         i++;
                     }
                 }
@@ -68,7 +68,7 @@ int Vecinirijillos(int ** tablero, int filas, int columnas,int filReal,int colRe
     return i;
 }
 void SinVidaSocialProteco(int ** tablero,int filas,int columnas,int celulas){
-    int    i, j, a;
+    int    i, j, vecinosCantidad;
     int **nuevaTabla=NULL;
     nuevaTabla = (int **)malloc ((filas+1)*sizeof(int *));
     for (i=0;i<filas;i++){
@@ -76,14 +76,14 @@ void SinVidaSocialProteco(int ** tablero,int filas,int columnas,int celulas){
     }
     for (i=0; i<columnas; i++){
         for (j=0; j<filas; j++) {
-            a = Vecinirijillos(tablero,i,j,filas,columnas);
-            if (a == 2)
+            vecinosCantidad = Vecinirijillos(tablero,i,j,filas,columnas);
+            if (vecinosCantidad == 2)
                 nuevaTabla[i][j] = tablero[i][j];
-            if (a == 3)
+            if (vecinosCantidad == 3)
                 nuevaTabla[i][j] = 1;
-            if (a < 2)
+            if (vecinosCantidad < 2)
                 nuevaTabla[i][j] = 0;
-            if (a > 3)
+            if (vecinosCantidad > 3)
                 nuevaTabla[i][j] = 0;
         }
     }
