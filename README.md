@@ -8,6 +8,7 @@ Proyecto 1: El Lenguaje de Programación C.
 *Pequeña wiki The Game of Life by Conway*
 
 El juego de la vida de Conway es el autómata celular más conocido y más estudiado, diseñado por el matemático John Horton Conway en 1970. El juego es un autómata celular bidimensional en el cual cada celda (célula) puede estar en uno de los dos estados posibles, viva o muerta. Partiendo de un estado inicial, la simulación va haciendo evolucionar al autómata en base a unas sencillas funciones de transición. Una célula va a estar en un estado concreto, el cual será determinado únicamente del estado inmediatamente anterior de las células vecinas y el de la propia célula, tal y como se describi´o en la sección de autómatas celulares.
+
 ![](forLog.png)
 
 ### Patrones:
@@ -17,8 +18,6 @@ Un patrón es una configuración de células vivas que permanece estable. Existe
 - Patrones que se trasladan (spaceships): Un conjunto de células vivas que permanece con la misma forma, pero que se desplaza por el tablero.
 
 Es considerado un Turing completo, para más información: Sistemas formales y autómatas.
-
-![](mem.jpg)
 
 ### Funciones importantes: 
 - SinVidaSocialProteco: es la función más importante ya que llama a las demás y checa la condición de los vecinos mencionado anteriormente. (2, 3, menor a 2 o mayor a  3). Se usa una tabla aux
